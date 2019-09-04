@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: demo-provider
+server:
+  port: 8661
+
+logging:
+  config: classpath:log4j2.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:abcd4321@10.10.171.244:8761/eureka/,http://root:abcd4321@10.10.171.245:8761/eureka/,http://root:abcd4321@10.10.171.246:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
