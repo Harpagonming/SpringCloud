@@ -7,12 +7,12 @@ spring:
       password: abcd4321
       roles: SERVICE_NODE
 server:
-  port: 8761
+  port: 8671
 
 eureka:
   client:
     service-url:
-      defaultZone: http://root:abcd4321@10.10.171.244:8761/eureka/,http://root:abcd4321@10.10.171.245:8761/eureka/,http://root:abcd4321@10.10.171.246:8761/eureka/
+      defaultZone: http://root:abcd4321@10.10.171.244:8671/eureka/,http://root:abcd4321@10.10.171.245:8671/eureka/,http://root:abcd4321@10.10.171.246:8671/eureka/
     fetch-registry: true
     register-with-eureka: true
   instance:

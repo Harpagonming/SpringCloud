@@ -2,7 +2,7 @@ spring:
   application:
     name: demo-provider
 server:
-  port: 8661
+  port: 8673
 
 logging:
   config: classpath:log4j2.xml

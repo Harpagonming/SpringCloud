@@ -2,7 +2,7 @@ spring:
   application:
     name: demo-consumer
 server:
-  port: 8662
+  port: 8674
 
 eureka:
   client:
