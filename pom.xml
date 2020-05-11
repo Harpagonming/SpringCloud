@@ -18,25 +18,6 @@
         <log4j.version>2.12.1</log4j.version>
     </properties>
 
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>kora</id>-->
-            <!--<name>kora Releases</name>-->
-            <!--<url>http://10.10.171.165:8081/nexus/content/groups/kora/</url>-->
-        <!--</repository>-->
-    <!--</repositories>-->
-
-    <!--<distributionManagement>-->
-        <!--<repository>-->
-            <!--<id>releases</id>-->
-            <!--<url>http://10.10.171.165:8081/nexus/content/repositories/releases/</url>-->
-        <!--</repository>-->
-        <!--<snapshotRepository>-->
-            <!--<id>snapshots</id>-->
-            <!--<url>http://10.10.171.165:8081/nexus/content/repositories/snapshots/</url>-->
-        <!--</snapshotRepository>-->
-    <!--</distributionManagement>-->
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -60,9 +41,7 @@
         <module>eureka</module>
         <module>producer</module>
         <module>consumer</module>
-        <!-- end -->
-        <!-- gateway -->
         <module>gateway</module>
-        <!-- end -->
+        <module>config-server</module>
     </modules>
 </project>

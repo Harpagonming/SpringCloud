@@ -1,1 +1,8 @@
-
+server:
+  port: 8670
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Harpagonming/SpringCloud.git
