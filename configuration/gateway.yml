@@ -2,4 +2,4 @@ spring:
   application:
     name: demo-gateway
 server:
-  port: 8672
+  port: 8674

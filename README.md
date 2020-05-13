@@ -8,7 +8,9 @@ https://github.com/Harpagonming/SpringCloud.git
 3. config
 # 对应的端口 
 1. config-server: 8670
-2. eureka: 8671
-3. gateway: 8672
-4. eureka-producer: 8673
-5. eureka-consumer: 8674
+2. eureka-node1: 8671
+3. eureka-node2: 8672
+4. eureka-node3: 8673
+5. gateway: 8674
+6. eureka-producer: 8675
+7. eureka-consumer: 8676
