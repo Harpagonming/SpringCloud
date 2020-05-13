@@ -16,4 +16,4 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
   instance:
-    instance-id: local-eureka-node3
+    instance-id: local-eureka-node2
