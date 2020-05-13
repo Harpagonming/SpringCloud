@@ -1,6 +1,6 @@
 spring:
   application:
-    name: demo-eureka
+    name: eureka
   security:
     user:
       name: root
@@ -11,9 +11,7 @@ server:
 
 eureka:
   client:
-    service-url:
-      defaultZone: http://root:abcd4321@10.10.171.244:8671/eureka/,http://root:abcd4321@10.10.171.245:8671/eureka/,http://root:abcd4321@10.10.171.246:8671/eureka/
-    fetch-registry: true
-    register-with-eureka: true
+    fetch-registry: false
+    register-with-eureka: false
   instance:
-    instance-id: local-eureka-czm
+    instance-id: local-eureka
