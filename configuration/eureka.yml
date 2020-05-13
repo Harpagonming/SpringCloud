@@ -1,11 +1,11 @@
 spring:
   application:
     name: eureka
-  security:
-    user:
-      name: root
-      password: abcd4321
-      roles: SERVICE_NODE
+#  security:
+#    user:
+#      name: root
+#      password: abcd4321
+#      roles: SERVICE_NODE
 server:
   port: 8671
 
