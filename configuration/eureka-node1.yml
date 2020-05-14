@@ -1,6 +1,6 @@
 spring:
   application:
-    name: eureka
+    name: eureka-node1
   security:
     user:
       name: root
@@ -16,4 +16,4 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
   instance:
-    instance-id: local-eureka-node1
+    instance-id: local-${spring.application.name}
