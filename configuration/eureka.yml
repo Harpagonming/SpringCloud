@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka
+  security:
+    user:
+      name: root
+      password: abcd4321
+      roles: SERVICE_NODE
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true

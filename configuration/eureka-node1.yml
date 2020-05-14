@@ -1,11 +1,6 @@
 spring:
   application:
     name: eureka-node1
-  security:
-    user:
-      name: root
-      password: abcd4321
-      roles: SERVICE_NODE
 server:
   port: 8671
 
@@ -13,7 +8,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://root:abcd4321@127.0.0.1:8671/eureka/,http://root:abcd4321@127.0.0.1:8672/eureka/,http://root:abcd4321@127.0.0.1:8673/eureka/
-    fetch-registry: true
-    register-with-eureka: true
   instance:
     instance-id: local-${spring.application.name}
