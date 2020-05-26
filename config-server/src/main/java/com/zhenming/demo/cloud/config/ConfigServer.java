@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
 @EnableAutoConfiguration
 @EnableConfigServer
 public class ConfigServer {
-    private static final Logger log = LoggerFactory.getLogger(ConfigServer.class);
+  private static final Logger log = LoggerFactory.getLogger(ConfigServer.class);
 
-    public static void main(String[] args) {
-        SpringApplication.run(ConfigServer.class, args);
-        log.info("Program has been launched successfully...");
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(ConfigServer.class, args);
+    log.info("Program has been launched successfully...");
+  }
 }

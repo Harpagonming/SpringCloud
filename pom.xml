@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.zhenming.demo</groupId>
-    <artifactId>spring-cloud-demo</artifactId>
-    <version>1.1.0</version>
+  <groupId>com.zhenming.demo</groupId>
+  <artifactId>spring-cloud-demo</artifactId>
+  <version>1.1.0</version>
 
-    <packaging>pom</packaging>
+  <packaging>pom</packaging>
 
-    <name>spring-cloud-demo</name>
+  <name>spring-cloud-demo</name>
 
-    <properties>
-        <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
-        <java.version>1.8</java.version>
-        <fastjson.version>1.2.68</fastjson.version>
-    </properties>
+  <properties>
+    <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
+    <java.version>1.8</java.version>
+    <fastjson.version>1.2.68</fastjson.version>
+  </properties>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.0.RELEASE</version>
-    </parent>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.0.RELEASE</version>
+  </parent>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-    <modules>
-        <!-- eureka集群，生产者与消费者 -->
-        <module>eureka</module>
-        <module>gateway</module>
-        <module>config-server</module>
-        <module>zookeeper-producer</module>
-        <module>zookeeper-consumer</module>
-    </modules>
+  <modules>
+    <!-- eureka集群，生产者与消费者 -->
+    <module>eureka</module>
+    <module>gateway</module>
+    <module>config-server</module>
+    <module>zookeeper-producer</module>
+    <module>zookeeper-consumer</module>
+  </modules>
 </project>

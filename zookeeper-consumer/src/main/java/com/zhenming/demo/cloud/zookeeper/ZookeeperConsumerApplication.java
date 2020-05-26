@@ -8,11 +8,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class ZookeeperProducerApplication {
-  private static final Logger log = LoggerFactory.getLogger(ZookeeperProducerApplication.class);
+public class ZookeeperConsumerApplication {
+  private static final Logger log = LoggerFactory.getLogger(ZookeeperConsumerApplication.class);
 
   public static void main(String[] args) {
-    SpringApplication.run(ZookeeperProducerApplication.class, args);
+    SpringApplication.run(ZookeeperConsumerApplication.class, args);
     log.info("Program has been launched successfully...");
   }
 }

@@ -9,10 +9,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @EnableEurekaServer
 @SpringBootApplication
 public class EurekaApplication {
-    private static final Logger log = LoggerFactory.getLogger(EurekaApplication.class);
+  private static final Logger log = LoggerFactory.getLogger(EurekaApplication.class);
 
-    public static void main(String[] args) {
-        SpringApplication.run(EurekaApplication.class, args);
-        log.info("Program has been launched successfully...");
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(EurekaApplication.class, args);
+    log.info("Program has been launched successfully...");
+  }
 }
