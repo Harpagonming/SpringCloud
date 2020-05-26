@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: zookeeper
+  cloud:
+    zookeeper:
+      discovery:
+        enabled: true
+        instance-port: 8671
+        register: true
+        instance-host: 10.170.245.44
+      connect-string: 10.10.171.244:2181,10.10.171.245:2181,10.10.171.246:2181
