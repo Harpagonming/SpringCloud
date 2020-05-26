@@ -14,3 +14,5 @@ https://github.com/Harpagonming/SpringCloud.git
 5. gateway: 8674
 6. eureka-producer: 8675
 7. eureka-consumer: 8676
+8. zookeeper-producer: 8677
+9. zookeeper-consumer: 8678
