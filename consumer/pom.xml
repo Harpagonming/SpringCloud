@@ -4,17 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.zhenming.demo</groupId>
-        <artifactId>spring-cloud</artifactId>
+        <artifactId>spring-cloud-demo</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
     <artifactId>cloud-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>consumer</name>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -51,7 +47,7 @@
     </dependencies>
 
     <build>
-        <finalName>consumer</finalName>
+        <finalName>${project.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

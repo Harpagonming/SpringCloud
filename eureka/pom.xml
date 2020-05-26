@@ -4,11 +4,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.zhenming.demo</groupId>
-        <artifactId>spring-cloud</artifactId>
+        <artifactId>spring-cloud-demo</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>eureka</artifactId>
-    <name>eureka</name>
+    <artifactId>${project.name}</artifactId>
+    <name>${project.name}</name>
+
+    <properties>
+        <project.name>eureka</project.name>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -56,7 +60,7 @@
     </dependencies>
 
     <build>
-        <finalName>eureka</finalName>
+        <finalName>${project.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -4,15 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.zhenming.demo</groupId>
-        <artifactId>spring-cloud</artifactId>
+        <artifactId>spring-cloud-demo</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>cloud-producer</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>producer</name>
+    <artifactId>${project.name}</artifactId>
+    <name>${project.name}</name>
 
     <properties>
-        <java.version>1.8</java.version>
+        <project.name>producer</project.name>
     </properties>
 
     <dependencies>
@@ -55,7 +54,7 @@
     </dependencies>
 
     <build>
-        <finalName>producer</finalName>
+        <finalName>${project.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
