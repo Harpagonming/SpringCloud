@@ -1,6 +1,6 @@
 spring:
   application:
-    name: zookeeper
+    name: zookeeper-producer
   cloud:
     zookeeper:
       discovery:
