@@ -2,4 +2,4 @@ server:
   port: 8677
 spring:
   application:
-    name: zookeeper-producer-node1
+    name: zookeeperProducer-node1
