@@ -1,5 +1,0 @@
-server:
-  port: 8679
-spring:
-  application:
-    name: zookeeperProducer-node3
