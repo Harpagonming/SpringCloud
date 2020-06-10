@@ -2,10 +2,5 @@ spring:
   application:
     name: zookeeper-producer
   cloud:
-    zookeeper:
-      discovery:
-        enabled: true
-        instance-port: 8677
-        register: true
-        instance-host: 10.170.245.44
-      connect-string: 10.10.171.244:2181,10.10.171.245:2181,10.10.171.246:2181
+    config:
+      uri: http://127.0.0.1:8670

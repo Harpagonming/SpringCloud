@@ -1,0 +1,10 @@
+server:
+  port: 8680
+spring:
+  application:
+    name: zookeeper-consumer
+  cloud:
+    zookeeper:
+      discovery:
+        register: false
+      connect-string: 10.10.171.244:2181,10.10.171.245:2181,10.10.171.246:2181
