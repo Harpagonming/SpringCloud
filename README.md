@@ -6,6 +6,7 @@ https://github.com/Harpagonming/SpringCloud.git
 1. eureka
 2. gateway
 3. config
+4. zookeeper
 # 对应的端口 
 1. config-server: 8670
 2. eureka-node1: 8671
