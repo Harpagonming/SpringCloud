@@ -1,4 +1,4 @@
-package com.bba.cop.config.rest;
+package com.zhenming.demo.cloud.zookeeper.config.rest;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
