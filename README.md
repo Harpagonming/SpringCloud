@@ -7,6 +7,7 @@ https://github.com/Harpagonming/SpringCloud.git
 2. gateway
 3. config
 4. zookeeper
+5. security-oauth2
 # 对应的端口 
 1. config-server: 8670
 2. eureka-node1: 8671
@@ -19,3 +20,4 @@ https://github.com/Harpagonming/SpringCloud.git
 8. zookeeper-producer2: 8678
 8. zookeeper-producer3: 8679
 9. zookeeper-consumer: 8680
+10. security-oauth2: 8681
