@@ -1,5 +1,18 @@
 spring:
   application:
-    name: demo-gateway
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+    zookeeper:
+      discovery:
+        instance-port: ${server.port}
+        enabled: true
+        register: true
+        instance-host: 10.170.245.44
+      connect-string: 10.10.171.244:2181,10.10.171.245:2181,10.10.171.246:2181
 server:
   port: 8674
