@@ -47,6 +47,8 @@
     <module>config-server</module>
     <module>zookeeper-producer</module>
     <module>zookeeper-consumer</module>
+    <module>security</module>
+    <module>security</module>
   </modules>
 
   <build>
