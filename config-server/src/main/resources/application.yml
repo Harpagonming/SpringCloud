@@ -8,5 +8,6 @@ spring:
         git:
           uri: https://github.com/Harpagonming/SpringCloud.git
           search-paths: configuration
+          basedir: ./temp
   application:
     name: config-server
