@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zhenming.demo.security.dao.UserDao">
-  <resultMap id="BaseResultMap" type="com.zhenming.demo.security.entity.User">
+<mapper namespace="com.zhenming.demo.cloud.security.dao.UserDao">
+  <resultMap id="BaseResultMap" type="com.zhenming.demo.cloud.security.entity.User">
     <id column="USER_ID" jdbcType="INTEGER" property="userId"/>
     <result column="USER_NAME" jdbcType="VARCHAR" property="userName"/>
     <result column="PASSWORD" jdbcType="VARCHAR" property="password"/>
@@ -69,7 +69,7 @@
   <sql id="Base_Column_List">
     USER_ID, USER_NAME, `PASSWORD`, ROLE_ID, DELETE_STATUS
   </sql>
-  <select id="selectByExample" parameterType="com.zhenming.demo.security.entity.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.zhenming.demo.cloud.security.entity.User" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -94,13 +94,13 @@
     from t_user
     where USER_ID = #{userId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zhenming.demo.security.entity.UserExample">
+  <delete id="deleteByExample" parameterType="com.zhenming.demo.cloud.security.entity.User">
     delete from t_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause"/>
     </if>
   </delete>
-  <insert id="insert" keyColumn="USER_ID" keyProperty="userId" parameterType="com.zhenming.demo.security.entity.User"
+  <insert id="insert" keyColumn="USER_ID" keyProperty="userId" parameterType="com.zhenming.demo.cloud.security.entity.User"
           useGeneratedKeys="true">
     insert into t_user (USER_NAME, ` PASSWORD`, ROLE_ID,
                         DELETE_STATUS)
@@ -108,7 +108,7 @@
             #{deleteStatus,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" keyColumn="USER_ID" keyProperty="userId"
-          parameterType="com.zhenming.demo.security.entity.User" useGeneratedKeys="true">
+          parameterType="com.zhenming.demo.cloud.security.entity.User" useGeneratedKeys="true">
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userName != null">
@@ -139,7 +139,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zhenming.demo.security.entity.UserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.zhenming.demo.cloud.security.entity.User" resultType="java.lang.Long">
     select count(*) from t_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause"/>
@@ -179,7 +179,7 @@
       <include refid="Update_By_Example_Where_Clause"/>
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhenming.demo.security.entity.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhenming.demo.cloud.security.entity.User">
     update t_user
     <set>
       <if test="userName != null">
@@ -197,7 +197,7 @@
     </set>
     where USER_ID = #{userId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zhenming.demo.security.entity.User">
+  <update id="updateByPrimaryKey" parameterType="com.zhenming.demo.cloud.security.entity.User">
     update t_user
     set USER_NAME = #{userName,jdbcType=VARCHAR},
       `PASSWORD` = #{password,jdbcType=VARCHAR},

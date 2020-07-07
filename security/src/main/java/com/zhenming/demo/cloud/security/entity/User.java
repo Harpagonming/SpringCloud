@@ -1,4 +1,4 @@
-package com.zhenming.demo.security.entity;
+package com.zhenming.demo.cloud.security.entity;
 
 import java.io.Serializable;
 
