@@ -34,3 +34,4 @@ build/
 ### System Files ###
 logs/
 temp/
+/temp/
