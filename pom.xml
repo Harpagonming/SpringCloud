@@ -45,7 +45,7 @@
   <modules>
     <!-- eureka集群，生产者与消费者 -->
     <module>eureka</module>
-    <module>gateway</module>
+    <module>gateway-zookeeper</module>
     <module>config-server</module>
     <module>zookeeper-producer</module>
     <module>zookeeper-consumer</module>

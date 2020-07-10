@@ -7,11 +7,11 @@
     <artifactId>spring-cloud-demo</artifactId>
     <version>1.2.0</version>
   </parent>
-  <artifactId>gateway</artifactId>
+  <artifactId>gateway-zookeeper</artifactId>
   <name>${project.name}</name>
 
   <properties>
-    <project.name>gateway</project.name>
+    <project.name>gateway-zookeeper</project.name>
   </properties>
 
   <dependencies>
