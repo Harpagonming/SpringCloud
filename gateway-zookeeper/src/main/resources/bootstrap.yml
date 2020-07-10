@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gateway
+    name: gateway-zookeeper
   cloud:
     config:
       uri: http://127.0.0.1:8670

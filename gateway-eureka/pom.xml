@@ -10,6 +10,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>gateway-eureka</artifactId>
+  <name>${project.name}</name>
 
+  <properties>
+    <project.name>gateway-eureka</project.name>
+  </properties>
 
 </project>
