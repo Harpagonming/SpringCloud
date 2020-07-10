@@ -13,6 +13,10 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+  security:
+    user:
+      name: root
+      password: abcd4321
 
 eureka:
   client:
