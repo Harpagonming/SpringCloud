@@ -7,11 +7,11 @@
     <artifactId>spring-cloud-demo</artifactId>
     <version>1.2.0</version>
   </parent>
-  <artifactId>gateway-zookeeper</artifactId>
+  <artifactId>com.zhenming.demo.cloud.gateway-zookeeper</artifactId>
   <name>${project.name}</name>
 
   <properties>
-    <project.name>gateway-zookeeper</project.name>
+    <project.name>com.zhenming.demo.cloud.gateway-zookeeper</project.name>
   </properties>
 
   <dependencies>
@@ -44,7 +44,7 @@
 
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-gateway</artifactId>
+      <artifactId>spring-cloud-starter-com.zhenming.demo.cloud.gateway</artifactId>
     </dependency>
 
     <dependency>
