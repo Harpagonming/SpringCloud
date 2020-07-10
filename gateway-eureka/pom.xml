@@ -13,7 +13,7 @@
   <name>${project.name}</name>
 
   <properties>
-    <project.name>com.zhenming.demo.cloud.gateway-eureka</project.name>
+    <project.name>gateway-eureka</project.name>
   </properties>
 
   <dependencies>
@@ -46,12 +46,22 @@
 
     <dependency>
       <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-gateway</artifactId>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
 
     <dependency>

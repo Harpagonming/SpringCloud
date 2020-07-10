@@ -1,18 +1,12 @@
 server:
-  port: 8685
+  port: 8686
 
 spring:
   application:
-    name: gateway-eureka
+    name: producer-eureka
 #  cloud:
 #    config:
 #      uri: http://127.0.0.1:8670
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
 
 eureka:
   client:
