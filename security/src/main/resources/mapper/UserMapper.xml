@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zhenming.demo.cloud.security.dao.UserDao">
+<mapper namespace="com.zhenming.demo.cloud.security.dao.UserMapper">
   <resultMap id="BaseResultMap" type="com.zhenming.demo.cloud.security.entity.User">
     <id column="USER_ID" jdbcType="INTEGER" property="userId"/>
-    <result column="USER_NAME" jdbcType="VARCHAR" property="userName"/>
+    <result column="USERNAME" jdbcType="VARCHAR" property="username"/>
     <result column="PASSWORD" jdbcType="VARCHAR" property="password"/>
-    <result column="ROLE_ID" jdbcType="INTEGER" property="roleId"/>
     <result column="DELETE_STATUS" jdbcType="INTEGER" property="deleteStatus"/>
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -67,9 +66,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    USER_ID, USER_NAME, `PASSWORD`, ROLE_ID, DELETE_STATUS
+    USER_ID, USERNAME, `PASSWORD`, DELETE_STATUS
   </sql>
-  <select id="selectByExample" parameterType="com.zhenming.demo.cloud.security.entity.User" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.zhenming.demo.cloud.security.entity.UserExample"
+          resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -94,52 +94,45 @@
     from t_user
     where USER_ID = #{userId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zhenming.demo.cloud.security.entity.User">
+  <delete id="deleteByExample" parameterType="com.zhenming.demo.cloud.security.entity.UserExample">
     delete from t_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause"/>
     </if>
   </delete>
-  <insert id="insert" keyColumn="USER_ID" keyProperty="userId" parameterType="com.zhenming.demo.cloud.security.entity.User"
-          useGeneratedKeys="true">
-    insert into t_user (USER_NAME, ` PASSWORD`, ROLE_ID,
-                        DELETE_STATUS)
-    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER},
-            #{deleteStatus,jdbcType=INTEGER})
+  <insert id="insert" keyColumn="USER_ID" keyProperty="userId"
+          parameterType="com.zhenming.demo.cloud.security.entity.User" useGeneratedKeys="true">
+    insert into t_user (USERNAME, ` PASSWORD`, DELETE_STATUS)
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{deleteStatus,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" keyColumn="USER_ID" keyProperty="userId"
           parameterType="com.zhenming.demo.cloud.security.entity.User" useGeneratedKeys="true">
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userName != null">
-        USER_NAME,
+      <if test="username != null">
+        USERNAME,
       </if>
       <if test="password != null">
         `PASSWORD`,
-      </if>
-      <if test="roleId != null">
-        ROLE_ID,
       </if>
       <if test="deleteStatus != null">
         DELETE_STATUS,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userName != null">
-        #{userName,jdbcType=VARCHAR},
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="roleId != null">
-        #{roleId,jdbcType=INTEGER},
       </if>
       <if test="deleteStatus != null">
         #{deleteStatus,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zhenming.demo.cloud.security.entity.User" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.zhenming.demo.cloud.security.entity.UserExample"
+          resultType="java.lang.Long">
     select count(*) from t_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause"/>
@@ -151,14 +144,11 @@
       <if test="record.userId != null">
         USER_ID = #{record.userId,jdbcType=INTEGER},
       </if>
-      <if test="record.userName != null">
-        USER_NAME = #{record.userName,jdbcType=VARCHAR},
+      <if test="record.username != null">
+        USERNAME = #{record.username,jdbcType=VARCHAR},
       </if>
       <if test="record.password != null">
         `PASSWORD` = #{record.password,jdbcType=VARCHAR},
-      </if>
-      <if test="record.roleId != null">
-        ROLE_ID = #{record.roleId,jdbcType=INTEGER},
       </if>
       <if test="record.deleteStatus != null">
         DELETE_STATUS = #{record.deleteStatus,jdbcType=INTEGER},
@@ -171,9 +161,8 @@
   <update id="updateByExample" parameterType="map">
     update t_user
     set USER_ID = #{record.userId,jdbcType=INTEGER},
-    USER_NAME = #{record.userName,jdbcType=VARCHAR},
+    USERNAME = #{record.username,jdbcType=VARCHAR},
     `PASSWORD` = #{record.password,jdbcType=VARCHAR},
-    ROLE_ID = #{record.roleId,jdbcType=INTEGER},
     DELETE_STATUS = #{record.deleteStatus,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause"/>
@@ -182,14 +171,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.zhenming.demo.cloud.security.entity.User">
     update t_user
     <set>
-      <if test="userName != null">
-        USER_NAME = #{userName,jdbcType=VARCHAR},
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
         `PASSWORD` = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="roleId != null">
-        ROLE_ID = #{roleId,jdbcType=INTEGER},
       </if>
       <if test="deleteStatus != null">
         DELETE_STATUS = #{deleteStatus,jdbcType=INTEGER},
@@ -199,9 +185,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zhenming.demo.cloud.security.entity.User">
     update t_user
-    set USER_NAME = #{userName,jdbcType=VARCHAR},
+    set USERNAME = #{username,jdbcType=VARCHAR},
       `PASSWORD` = #{password,jdbcType=VARCHAR},
-      ROLE_ID = #{roleId,jdbcType=INTEGER},
       DELETE_STATUS = #{deleteStatus,jdbcType=INTEGER}
     where USER_ID = #{userId,jdbcType=INTEGER}
   </update>

@@ -1,12 +1,36 @@
+server:
+  port: 8681
+  shutdown: graceful
+
 spring:
   application:
     name: security
   lifecycle:
     timeout-per-shutdown-phase: 30s
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/java_shiro?useUnicode=true&autoReconnect=true&rewriteBatchedStatements=true&allowMultiQueries=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: abcd4321
+    # Database Supplementary Settings
 
-server:
-  port: 8681
-  shutdown: graceful
+    # Druid Monitor Settings
+    druid:
+      username: root
+      password: abcd4321
+      initialSize: 3
+      minIdle: 5
+      maxActive: 20
+      maxWait: 10000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: true
+      filters: stat,wall,log4j2
+      testOnReturn: false
+
 management:
   endpoint:
     health:
@@ -17,3 +41,9 @@ management:
     web:
       exposure:
         include: '*'
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    use-column-label: true
