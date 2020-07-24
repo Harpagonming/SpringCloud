@@ -13,10 +13,23 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-  security:
-    user:
-      name: root
-      password: abcd4321
+  session:
+    timeout: 30M
+    store-type: redis
+    redis:
+      flush-mode: on_save
+      namespace: spring:session
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 60S
+#    lettuce:
+#      pool:
+#        max-active: 30
+#        max-wait: 1S
+#        max-idle: 20
+#        min-idle: 5
 
 eureka:
   client:

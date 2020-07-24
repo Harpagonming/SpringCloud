@@ -10,42 +10,44 @@
 <div align="center" style="margin-top: 5%">
     <h1>登录</h1>
     <div>
-        <form id="submitForm">
+        <form id="submitForm" action="/login" method="post">
             Account Name:<br>
-            <input id="userName" type="text" name="userName" required="required">
+            <input id="username" type="text" name="username" required="required">
             <br>
             Password:<br>
-            <input id="password" type="text" name="password" required="required">
+            <input id="password" type="password" name="password" required="required">
+
+            <input id="type" type="text" name="type" value="1" hidden>
+            <br>
+            <br>
+            <input type="submit" value="Submit"/>
         </form>
     </div>
-    <div>
-        <button type="submit" value="Submit" onclick="login()" style="margin-top: 5%">登录</button>
-    </div>
 </div>
-<script type="text/javascript">
-    function getUser() {
-        return JSON.stringify($("#submitForm").serializeJSON());
-    }
+<!--<script type="text/javascript">-->
+<!--    function getUser() {-->
+<!--        return JSON.stringify($("#submitForm").serializeJSON());-->
+<!--    }-->
 
-    function login() {
-        var requestBody = getUser();
-        $.ajax({
-            url: "http://10.170.245.44:8550/user/login",
-            type: "post",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            data: requestBody,
-            success: function (data) {
-                if (data.code == 0) {
-                    window.location.href = "http://10.170.245.44:8550";
-                } else if (data.code == 300) {
-                    alert(data.message);
-                } else if (data.code == 301) {
-                    //错误
-                }
-            }
-        });
-    }
-</script>
+<!--    function login() {-->
+<!--        var requestBody = getUser();-->
+<!--        $.ajax({-->
+<!--            url: "http://10.170.245.44:8550/user/login",-->
+<!--            type: "post",-->
+<!--            contentType: "application/json; charset=utf-8",-->
+<!--            dataType: "json",-->
+<!--            data: requestBody,-->
+<!--            success: function (data) {-->
+<!--                if (data.code == 0) {-->
+<!--                    window.location.href = "http://10.170.245.44:8550";-->
+<!--                } else if (data.code == 300) {-->
+<!--                    alert(data.message);-->
+<!--                } else if (data.code == 301) {-->
+<!--                    //错误-->
+<!--                }-->
+<!--            }-->
+<!--        });-->
+<!--    }-->
+<!--</script>-->
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.zhenming.demo.cloud.gateway.config.security;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -12,20 +13,23 @@ public class CustomAuthenticationToken extends AbstractAuthenticationToken {
   private final Object principal;
   private final Object type;
   private final Object credentials;
+  private final JSONObject user;
 
   public CustomAuthenticationToken(Object principal, Object credentials, Object type) {
     super(null);
     this.principal = principal;
     this.type = type;
     this.credentials = credentials;
+    this.user = null;
     setAuthenticated(false);
   }
 
-  public CustomAuthenticationToken(Collection<? extends GrantedAuthority> authorities, Object principal, Object credentials, Object type) {
+  public CustomAuthenticationToken(Collection<? extends GrantedAuthority> authorities, Object principal, Object credentials, Object type, JSONObject user) {
     super(authorities);
     this.principal = principal;
     this.type = type;
     this.credentials = credentials;
+    this.user = user;
     super.setAuthenticated(true);
   }
 
