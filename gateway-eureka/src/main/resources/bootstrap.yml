@@ -4,10 +4,10 @@ server:
 spring:
   application:
     name: gateway-eureka
-#  cloud:
-#    config:
-#      uri: http://127.0.0.1:8670
   cloud:
+    config:
+      enabled: false
+  #      uri: http://127.0.0.1:8670
     gateway:
       discovery:
         locator:
