@@ -12,7 +12,7 @@ spring:
         instance-port: ${server.port}
         enabled: true
         register: true
-        instance-host: ${spring.cloud.discovery.simple.local.uri}
+        instance-host: 0.0.0.0
       connect-string: 10.10.171.244:2181,10.10.171.245:2181,10.10.171.246:2181
 server:
   port: 8674
