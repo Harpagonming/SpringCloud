@@ -4,10 +4,11 @@
 https://github.com/Harpagonming/SpringCloud.git
 # 用到的组件
 1. eureka
-2. com.zhenming.demo.cloud.gateway
+2. gateway
 3. config
 4. zookeeper
-5. security-oauth2
+5. security
+6. sleuth
 # 对应的端口 
 1. config-server: 8670
 2. eureka-node1: 8671
@@ -24,4 +25,4 @@ https://github.com/Harpagonming/SpringCloud.git
 11. eureka-producer1: 8682
 12. eureka-producer1: 8683
 13. eureka-producer1: 8684
-14. com.zhenming.demo.cloud.gateway（针对eureka）: 8685
+14. gateway（针对eureka）: 8685
