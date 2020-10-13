@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN" monitorInterval="600">
-  <Properties>
-    <Property name="LOG_HOME">./logs</Property>
+
+<Configuration status="WARN" monitorInterval="300">
+  <properties>
+    <Property name="LOG_HOME">logs</Property>
     <Property name="LOG_FILE">config-server</Property>
-    <Property name="pattern">%d{HH:mm:ss,SSS} [%p] %c{1}:[%L] - %m%n</Property>
-  </Properties>
+    <Property name="LOG_HISTORY">history</Property>
+    <Property name="pattern">%d{yyyy-MM-dd HH:mm:ss,SSS} [%p] %c{1}:[%L] - %m%n</Property>
+  </properties>
   <Appenders>
-    <Console name="Console" target="SYSTEM_OUT">
+    <Console target="SYSTEM_OUT">
       <name>Console</name>
       <PatternLayout>
         <Pattern>${pattern}</Pattern>
       </PatternLayout>
     </Console>
-
-    <RollingFile name="File">
-      <filePattern>${LOG_HOME}/${LOG_FILE}.%d{yyyy-MM-dd}.log</filePattern>
+    <RollingRandomAccessFile>
+      <name>File</name>
       <fileName>${LOG_HOME}/${LOG_FILE}.log</fileName>
+      <filePattern>${LOG_HOME}/${LOG_HISTORY}/${LOG_FILE}.%d{yyyy-MM-dd}.log</filePattern>
       <PatternLayout>
         <Pattern>${pattern}</Pattern>
       </PatternLayout>
-      <Filters>
-        <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
-      </Filters>
       <Policies>
         <TimeBasedTriggeringPolicy interval="1"/>
       </Policies>
-      <DefaultRolloverStrategy max="7"/>
-    </RollingFile>
+      <DefaultRolloverStrategy max="30">
+        <Delete basePath="${LOG_HOME}/${LOG_HISTORY}/" maxDepth="2">
+          <IfFileName glob="${LOG_FILE}.*.log"/>
+          <IfLastModified age="7d"/>
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingRandomAccessFile>
 
     <Async name="Async">
       <AppenderRef ref="File"/>
@@ -34,9 +38,9 @@
   </Appenders>
 
   <Loggers>
-    <Logger name="com.zhenming.demo" level="debug"/>
+    <Logger name="com.zhenming.demo" level="DEBUG"/>
 
-    <Root level="info">
+    <Root level="INFO">
       <AppenderRef ref="Async"/>
       <AppenderRef ref="Console"/>
     </Root>
