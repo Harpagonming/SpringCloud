@@ -18,26 +18,26 @@ spring:
           uri: lb://producer-eureka
           predicates:
             - Path=/base/**
-#          striprefix: 1
+          stripprefix: 1
           filters:
             - Role=roleId
   session:
     timeout: 30M
-#    store-type: redis
-#    redis:
-#      flush-mode: on_save
-#      namespace: spring
-#  redis:
-#    database: 0
-#    host: 127.0.0.1
-#    port: 6379
-#    timeout: 60S
-#    lettuce:
-#      pool:
-#        max-active: 30
-#        max-wait: 1S
-#        max-idle: 20
-#        min-idle: 5
+    store-type: redis
+    redis:
+      flush-mode: on_save
+      namespace: spring
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 60S
+    lettuce:
+      pool:
+        max-active: 30
+        max-wait: 1S
+        max-idle: 20
+        min-idle: 5
 
 eureka:
   client:
